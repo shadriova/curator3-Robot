@@ -1,27 +1,16 @@
 import telebot
-bot = telebot.TeleBot('6811968600:AAGMfqWutHwsrlgR1CdtK-fClrf12IbgTT8')
- 
+bot=telebot.TeleBot('6939469753:AAGMnNjy1itjLXu0fj3fNoVNCxraCBhl9Ac')
+
 @bot.message_handler(commands=['start'])
 def main(message):
-    bot.send_message(message.chat.id, '*добро пожаловать в бот!*', parse_mode='Markdown')
-    
-@bot.message_handler(commands=['greetings'])
+    bot.send_message(message.chat,id,'*привет,выбери команду*')
+@bot.message_handler(commands=['back'])
 def main(message):
-    bot.send_message(message.chat.id, 'Приветствую тебя в моём первом боте!', parse_mode='Markdown')
-    
-    
-@bot.message_handler(commands=['binary code'])
+    bot.send_message(message.chat,id,'обратно вернуться нельзя,что было то прошло')
+@bot.message_handler(commands=['help'])
 def main(message):
-    bot.send_message(message.chat.id, 'двоичный код-данные в виде 1 и 0', parse_mode='Markdown')
-    
-      
-@bot.message_handler(commands=['measurement of information '])
-def main(message):
-    bot.send_message(message.chat.id, 'измерение информации-бит\nбайт\nКилобайт\nМегабайт\nГигобайт\nТерабайт', parse_mode='Markdown')
-    
-    
-@bot.message_handler(commands=['Informatics '])
-def main(message):
-    bot.send_message(message.chat.id, 'информатика-это наука,изучающая автоматическую работу с информацией', parse_mode='Markdown') 
-    
+    bot.send_message(message.chat,id,'помощь уже в пути. Ждите.')
+@bot.message_handler(commands=['end'])
+def main(message):   
+    bot.send_message(message.chat,id,'прощай')
 bot.infinity_polling()
