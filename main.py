@@ -1,16 +1,18 @@
 import telebot
-bot=telebot.TeleBot('6939469753:AAGMnNjy1itjLXu0fj3fNoVNCxraCBhl9Ac')
+import random
+
+bot = telebot.TeleBot('6906533346:AAFlQ2Dv-Q0ojkwA4uTfQiFSaUZRwYwAUzw')
 
 @bot.message_handler(commands=['start'])
 def main(message):
-    bot.send_message(message.chat,id,'*привет,выбери команду*')
-@bot.message_handler(commands=['back'])
+    bot.send_message('Нихао, аригато', parse_mode='Markdown')
+
+@bot.message_handler(commands=['число'])
 def main(message):
-    bot.send_message(message.chat,id,'обратно вернуться нельзя,что было то прошло')
-@bot.message_handler(commands=['help'])
+    bot.send_message(digit=random.randint(1,10))
+
+@bot.message_handler(commands=['дрель'])
 def main(message):
-    bot.send_message(message.chat,id,'помощь уже в пути. Ждите.')
-@bot.message_handler(commands=['end'])
-def main(message):   
-    bot.send_message(message.chat,id,'прощай')
-bot.infinity_polling()
+    bot.send_message('*ВжжжжжВЖжжжж*')
+
+bot.infinyty_pooling()
