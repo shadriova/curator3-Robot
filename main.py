@@ -1,31 +1,16 @@
 import telebot
-
-bot = telebot.TeleBot('6187203002:AAFqQ9JCdI3WCG0I9PuoOIhgd2P8ZkyvZJY')
-
+bot = telebot.TeleBot('6636808037:AAFmPOlYpuTUdXhvLl2xPkjXF2WzeYtDbrU')
 
 @bot.message_handler(commands=['start'])
 def main(message):
-    bot.send_message(message.chat.id, 'Привет /n наконец-то ты нашёл меня')
+    bot.send_message(message.chat.id, '*ПРИВЕТ, БОЛЕЛЬЩИК*', parse_mode='Markdown')
 
-
-@bot.message_handler(commands=['love'])
+@bot.message_handler(commands=['goool'])
 def main(message):
-    bot.send_message(message.chat.id, 'Один честны разговор - может решить много проблем')
+    bot.send_message(message.chat.id, '*ОЛЕ-ОЛЕ-ОЛЕ*', parse_mode='Markdown')
 
-
-@bot.message_handler(commands=['friend'])
+@bot.message_handler(commands=['link'])
 def main(message):
-    bot.send_message(message.chat.id, 'Любовь может обойтись без взаимности, но дружба — никогда')
-
-
-@bot.message_handler(commands=['family'])
-def main(message):
-    bot.send_message(message.chat.id, 'Семья – это место силы')
-
-
-@bot.message_handler(commands=['career'])
-def main(message):
-    bot.send_message(message.chat.id, 'Страх высоты многим мешает делать карьеру… ')
-
+    bot.send_message(message.chat.id, '[ссылка](https://rfs.ru/)', parse_mode='Markdown')
 
 bot.infinity_polling()
